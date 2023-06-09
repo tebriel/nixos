@@ -38,32 +38,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.tebriel = {
-    isNormalUser = true;
-    description = "Chris Moultrie";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      # apps
-      firefox
-      thunderbird
-      microsoft-edge-beta
-      _1password-gui
-      todoist
-      # cli
-      _1password
-      gh
-      fzf
-      discord
-      chezmoi
-      direnv
-      shellcheck
-      zoxide
-      # zsh things
-      zsh-powerlevel10k
-    ];
-    shell = pkgs.zsh;
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -71,18 +45,22 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-    podman
-    zsh
-    python311
-    fprintd
-    git
-    tailscale
-    screen
-    silver-searcher
     # vim things
     (import ./vim.nix)
+    direnv
+    fzf
+    _1password
+    chezmoi
+    fprintd
+    git
+    podman
+    python311
+    screen
+    silver-searcher
+    tailscale
+    zoxide
+    zsh
+    zsh-powerlevel10k
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -102,11 +80,6 @@
 
   programs._1password.enable = true;
 
-  programs._1password-gui = {
-    enable = true;
-    polkitPolicyOwners = ["tebriel"];
-  };
-
   programs.zsh = {
     enable = true;
     promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
@@ -118,26 +91,10 @@ eval "$(zoxide init zsh)"
     '';
   };
 
-  fonts = {
-    enableDefaultFonts = true;
-    fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    ];
-    fontDir.enable = true;
-  };
-
-  console = {
-    font = "JetBrainsMonoNerdFont-Regular";
-  };
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-  services.fprintd.enable = true;
-  services.fprintd.tod.enable = true;
-  # services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
-  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix;
 
   # Enable tailscale
   services.tailscale.enable = true;

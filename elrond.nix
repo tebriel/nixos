@@ -8,6 +8,9 @@
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       ./main.nix
+      ./tebriel.nix
+      ./fprintd.nix
+      ./guisettings.nix
     ];
 
   # Bootloader.
