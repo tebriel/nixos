@@ -118,6 +118,7 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    podman
     zsh
     python311
     fprintd
@@ -136,6 +137,12 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
+
   programs.vim.defaultEditor = true;
 
   programs._1password.enable = true;
