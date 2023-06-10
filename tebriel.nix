@@ -18,6 +18,8 @@
       microsoft-edge-beta
       thunderbird
       todoist
+      plexamp
+      plex-media-player
 
       # cli
       gh

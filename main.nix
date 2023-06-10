@@ -80,6 +80,23 @@
 
   programs._1password.enable = true;
 
+  programs.screen.screenrc = ''
+#kill startup message
+startup_message off
+
+defscrollback 1024
+hardstatus on
+hardstatus alwayslastline
+
+
+shell "${pkgs.zsh}/bin/zsh"
+
+# defbce on
+term screen-256color
+
+hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{= g}][ %{G}%d %M %c%{= g} ]'
+  '';
+
   programs.zsh = {
     enable = true;
     promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
