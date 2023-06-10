@@ -10,26 +10,6 @@
     isNormalUser = true;
     description = "Chris Moultrie";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      # apps
-      _1password-gui
-      discord
-      firefox
-      microsoft-edge-beta
-      thunderbird
-      todoist
-      plexamp
-      plex-media-player
-
-      # cli
-      gh
-      shellcheck
-    ];
     shell = pkgs.zsh;
-  };
-
-  programs._1password-gui = {
-    enable = true;
-    polkitPolicyOwners = ["tebriel"];
   };
 }

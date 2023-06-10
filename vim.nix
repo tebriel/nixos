@@ -15,7 +15,7 @@ vim-full.customize {
 
         # Figure out tabs
         vim-sleuth
-        
+
         # Visual Stuff
         vim-airline
         dracula-vim

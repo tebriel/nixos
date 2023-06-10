@@ -47,15 +47,20 @@
   environment.systemPackages = with pkgs; [
     # vim things
     (import ./vim.nix)
-    direnv
-    fzf
     _1password
+    asdf-vm
+    azure-cli
     chezmoi
+    direnv
     fprintd
+    fzf
+    gh
     git
+    kubectl
     podman
     python311
     screen
+    shellcheck
     silver-searcher
     tailscale
     zoxide
@@ -105,6 +110,7 @@ hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n*%f %t
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(zoxide init zsh)"
+eval "$(asdf exec direnv hook zsh)"
     '';
   };
 

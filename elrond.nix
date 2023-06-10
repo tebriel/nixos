@@ -9,6 +9,7 @@
       /etc/nixos/hardware-configuration.nix
       ./main.nix
       ./tebriel.nix
+      ./tebriel-gui.nix
       ./fprintd.nix
       ./guisettings.nix
     ];
