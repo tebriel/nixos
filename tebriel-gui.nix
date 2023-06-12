@@ -7,6 +7,8 @@
     microsoft-edge-beta
     plex-media-player
     plexamp
+    remmina
+    spotify
     thunderbird
     todoist
     todoist-electron
