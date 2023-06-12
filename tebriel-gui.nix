@@ -9,6 +9,7 @@
     plexamp
     thunderbird
     todoist
+    todoist-electron
     vlc
   ];
 
@@ -16,4 +17,8 @@
     enable = true;
     polkitPolicyOwners = ["tebriel"];
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-21.4.0"
+  ];
 }
