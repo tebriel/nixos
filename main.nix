@@ -90,7 +90,7 @@
     enable = true;
     arguments = [
       "-config"
-      "-profile f7f73e"
+      "f7f73e"
     ];
   };
 
