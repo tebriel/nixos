@@ -57,6 +57,7 @@
     gh
     git
     kubectl
+    nextdns
     podman
     python311
     screen
@@ -84,6 +85,14 @@
   programs.vim.defaultEditor = true;
 
   programs._1password.enable = true;
+
+  services.nextdns = {
+    enable = true;
+    arguments = [
+      "-config"
+      "-profile f7f73e"
+    ];
+  };
 
   programs.screen.screenrc = ''
 #kill startup message
