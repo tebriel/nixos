@@ -2,6 +2,8 @@
 {
   users.users.tebriel.packages = with pkgs; [
     _1password-gui
+    alacritty
+    gnomeExtensions.toggle-alacritty
     discord
     firefox
     microsoft-edge-beta
