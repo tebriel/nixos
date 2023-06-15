@@ -58,6 +58,7 @@
     git
     kubectl
     nextdns
+    onedrive
     podman
     python311
     screen
@@ -93,6 +94,8 @@
       "f7f73e"
     ];
   };
+
+  services.onedrive.enable = true;
 
   programs.screen.screenrc = ''
 #kill startup message
