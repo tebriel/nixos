@@ -64,6 +64,7 @@
     screen
     shellcheck
     silver-searcher
+    speedtest-cli
     tailscale
     zoxide
     zsh
