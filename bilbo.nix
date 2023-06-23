@@ -36,6 +36,18 @@
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
+
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        # temp enable to allow pairing Airpods
+        # ControllerMode = "bredr";
+        ControllerMode = "dual";
+      };
+    };
+  };
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

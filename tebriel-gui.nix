@@ -15,6 +15,7 @@
     todoist
     todoist-electron
     vlc
+    xournalpp
   ];
 
   programs._1password-gui = {
