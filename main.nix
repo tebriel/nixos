@@ -56,7 +56,6 @@
     fzf
     gh
     git
-    jekyll
     kubectl
     nextdns
     onedrive
