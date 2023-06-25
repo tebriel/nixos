@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
-{
+
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in {
   users.users.tebriel.packages = with pkgs; [
     _1password-gui
     alacritty
@@ -13,7 +16,7 @@
     spotify
     thunderbird
     todoist
-    todoist-electron
+    unstable.todoist-electron
     vlc
     xournalpp
   ];

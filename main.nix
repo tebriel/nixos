@@ -4,7 +4,10 @@
 
 { config, pkgs, ... }:
 
-{
+
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in {
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -65,7 +68,7 @@
     shellcheck
     silver-searcher
     speedtest-cli
-    tailscale
+    unstable.tailscale
     zoxide
     zsh
     zsh-powerlevel10k
@@ -133,7 +136,10 @@ eval "$(asdf exec direnv hook zsh)"
   # services.openssh.enable = true;
 
   # Enable tailscale
-  services.tailscale.enable = true;
+  services.tailscale = {
+    package = unstable.tailscale;
+    enable = true;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
