@@ -23,6 +23,8 @@
     "/crypto_keyfile.bin" = null;
   };
 
+  boot.kernelModules = [ "sg" ];
+
   networking.hostName = "elrond";
 
   # Enable the X11 windowing system.
